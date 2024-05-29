@@ -20,6 +20,10 @@ if 'index' not in st.session_state:
     st.session_state.index = 0
 if 'show_hint' not in st.session_state:
     st.session_state.show_hint = False
+if 'correct_count' not in st.session_state:
+    st.session_state.correct_count = 0
+if 'submit_count' not in st.session_state:
+    st.session_state.submit_count = 0
 
 # Function to display flashcard
 def display_flashcard(index):
@@ -35,6 +39,20 @@ if flashcards:
     card = flashcards[st.session_state.index % len(flashcards)]
     display_flashcard(st.session_state.index % len(flashcards))
 
+    # Input for the function name
+    user_input = st.text_input("Enter the function name (e.g., pd.read_csv):", key="user_input")
+
+    if st.button("Submit"):
+        st.session_state.submit_count += 1
+        if user_input == card['function']:
+            st.success("Correct!")
+            st.session_state.correct_count += 1
+        else:
+            st.error("Incorrect. Try again!")
+
+    # Display score
+    st.write(f"Score: {st.session_state.correct_count} out of {st.session_state.submit_count}")
+
     # Navigation buttons
     col1, col2, col3 = st.columns(3)
     with col1:
@@ -43,6 +61,7 @@ if flashcards:
             if st.session_state.index < 0:
                 st.session_state.index = len(flashcards) - 1
             st.session_state.show_hint = False
+            st.session_state.user_input = ""
 
     with col3:
         if st.button("Next"):
@@ -50,17 +69,7 @@ if flashcards:
             if st.session_state.index >= len(flashcards):
                 st.session_state.index = 0
             st.session_state.show_hint = False
-
-    st.write(f"Flashcard {st.session_state.index + 1} of {len(flashcards)}")
-
-    # Input for the function name
-    user_input = st.text_input("Enter the function name (e.g., pd.read_csv):")
-
-    if st.button("Submit"):
-        if user_input == card['function']:
-            st.success("Correct!")
-        else:
-            st.error("Incorrect. Try again!")
+            st.session_state.user_input = ""
 
     # Spacing for hint buttons
     st.write("")
