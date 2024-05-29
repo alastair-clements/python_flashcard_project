@@ -1,0 +1,32 @@
+[
+    {
+        "function": "pd.read_csv",
+        "description": "Reads a CSV file into a DataFrame.",
+        "example": "df = pd.read_csv('data.csv')",
+        "difficulty": 1
+    },
+    {
+        "function": "df.head",
+        "description": "Returns the first n rows of a DataFrame.",
+        "example": "df.head(5)",
+        "difficulty": 1
+    },
+    {
+        "function": "df.info",
+        "description": "Prints a concise summary of a DataFrame.",
+        "example": "df.info()",
+        "difficulty": 2
+    },
+    {
+        "function": "df.describe",
+        "description": "Generates descriptive statistics.",
+        "example": "df.describe()",
+        "difficulty": 2
+    },
+    {
+        "function": "df.drop",
+        "description": "Drops specified labels from rows or columns.",
+        "example": "df.drop('column_name', axis=1)",
+        "difficulty": 3
+    }
+]
