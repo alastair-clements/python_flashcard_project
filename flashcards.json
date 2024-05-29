@@ -2,31 +2,201 @@
     {
         "function": "pd.read_csv",
         "description": "Reads a CSV file into a DataFrame.",
-        "example": "df = pd.read_csv('data.csv')",
+        "difficulty": 1
+    },
+    {
+        "function": "pd.to_csv",
+        "description": "Writes a DataFrame to a CSV file.",
         "difficulty": 1
     },
     {
         "function": "df.head",
         "description": "Returns the first n rows of a DataFrame.",
-        "example": "df.head(5)",
+        "difficulty": 1
+    },
+    {
+        "function": "df.tail",
+        "description": "Returns the last n rows of a DataFrame.",
         "difficulty": 1
     },
     {
         "function": "df.info",
         "description": "Prints a concise summary of a DataFrame.",
-        "example": "df.info()",
-        "difficulty": 2
+        "difficulty": 1
     },
     {
         "function": "df.describe",
         "description": "Generates descriptive statistics.",
-        "example": "df.describe()",
-        "difficulty": 2
+        "difficulty": 1
     },
     {
         "function": "df.drop",
         "description": "Drops specified labels from rows or columns.",
-        "example": "df.drop('column_name', axis=1)",
+        "difficulty": 2
+    },
+    {
+        "function": "df.sort_values",
+        "description": "Sorts a DataFrame by the values of one or more columns.",
+        "difficulty": 2
+    },
+    {
+        "function": "df.rename",
+        "description": "Renames labels (rows or columns) in a DataFrame.",
+        "difficulty": 2
+    },
+    {
+        "function": "df.set_index",
+        "description": "Sets the DataFrame index (row labels) using one or more existing columns.",
+        "difficulty": 2
+    },
+    {
+        "function": "df.reset_index",
+        "description": "Resets the index of a DataFrame, and use the default one instead.",
+        "difficulty": 2
+    },
+    {
+        "function": "df.apply",
+        "description": "Applies a function along an axis of the DataFrame.",
         "difficulty": 3
+    },
+    {
+        "function": "df.map",
+        "description": "Applies a function element-wise on a series.",
+        "difficulty": 3
+    },
+    {
+        "function": "df.groupby",
+        "description": "Groups DataFrame using a mapper or by a Series of columns.",
+        "difficulty": 3
+    },
+    {
+        "function": "df.merge",
+        "description": "Merges DataFrame or named Series objects with a database-style join.",
+        "difficulty": 3
+    },
+    {
+        "function": "df.concat",
+        "description": "Concatenates pandas objects along a particular axis with optional set logic along the other axes.",
+        "difficulty": 3
+    },
+    {
+        "function": "df.pivot",
+        "description": "Reshapes data (produce a 'pivot' table) based on column values.",
+        "difficulty": 3
+    },
+    {
+        "function": "df.pivot_table",
+        "description": "Creates a spreadsheet-style pivot table as a DataFrame.",
+        "difficulty": 3
+    },
+    {
+        "function": "df.melt",
+        "description": "Unpivots a DataFrame from wide format to long format.",
+        "difficulty": 3
+    },
+    {
+        "function": "df.fillna",
+        "description": "Fills NA/NaN values using the specified method.",
+        "difficulty": 2
+    },
+    {
+        "function": "df.dropna",
+        "description": "Removes missing values.",
+        "difficulty": 2
+    },
+    {
+        "function": "df.replace",
+        "description": "Replaces values given in 'to_replace' with 'value'.",
+        "difficulty": 2
+    },
+    {
+        "function": "pd.concat",
+        "description": "Concatenates pandas objects along a particular axis.",
+        "difficulty": 3
+    },
+    {
+        "function": "pd.merge",
+        "description": "Merges DataFrame or named Series objects with a database-style join.",
+        "difficulty": 3
+    },
+    {
+        "function": "df.duplicated",
+        "description": "Returns boolean Series denoting duplicate rows.",
+        "difficulty": 2
+    },
+    {
+        "function": "df.drop_duplicates",
+        "description": "Removes duplicate rows from a DataFrame.",
+        "difficulty": 2
+    },
+    {
+        "function": "df.astype",
+        "description": "Casts a pandas object to a specified dtype.",
+        "difficulty": 3
+    },
+    {
+        "function": "df.memory_usage",
+        "description": "Returns the memory usage of each column in bytes.",
+        "difficulty": 2
+    },
+    {
+        "function": "df.query",
+        "description": "Queries the columns of a DataFrame with a boolean expression.",
+        "difficulty": 3
+    },
+    {
+        "function": "df.eval",
+        "description": "Evaluates a string describing operations on DataFrame columns.",
+        "difficulty": 3
+    },
+    {
+        "function": "pd.DataFrame",
+        "description": "Two-dimensional, size-mutable, potentially heterogeneous tabular data.",
+        "difficulty": 1
+    },
+    {
+        "function": "pd.Series",
+        "description": "One-dimensional ndarray with axis labels (including time series).",
+        "difficulty": 1
+    },
+    {
+        "function": "df.isnull",
+        "description": "Detects missing values.",
+        "difficulty": 2
+    },
+    {
+        "function": "df.notnull",
+        "description": "Detects non-missing values.",
+        "difficulty": 2
+    },
+    {
+        "function": "pd.date_range",
+        "description": "Returns a fixed frequency datetime index.",
+        "difficulty": 2
+    },
+    {
+        "function": "pd.to_datetime",
+        "description": "Converts argument to datetime.",
+        "difficulty": 2
+    },
+    {
+        "function": "pd.get_dummies",
+        "description": "Converts categorical variable(s) into dummy/indicator variables.",
+        "difficulty": 3
+    },
+    {
+        "function": "df.sample",
+        "description": "Returns a random sample of items from an axis of object.",
+        "difficulty": 2
+    },
+    {
+        "function": "df.nlargest",
+        "description": "Returns the first n rows ordered by columns in descending order.",
+        "difficulty": 2
+    },
+    {
+        "function": "df.nsmallest",
+        "description": "Returns the first n rows ordered by columns in ascending order.",
+        "difficulty": 2
     }
 ]
