@@ -24,7 +24,7 @@ if 'show_hint' not in st.session_state:
 # Function to display flashcard
 def display_flashcard(index):
     card = flashcards[index]
-    st.write(f"**Description:** {card['description']}")
+    st.markdown(f"### Description: {card['description']}")
     st.write(f"**Difficulty Level:** {card['difficulty']}")
 
 # UI elements
@@ -34,31 +34,6 @@ st.write("Learn the most important functions in pandas.")
 if flashcards:
     card = flashcards[st.session_state.index % len(flashcards)]
     display_flashcard(st.session_state.index % len(flashcards))
-
-    # Input for the function name
-    user_input = st.text_input("Enter the function name (e.g., pd.read_csv):")
-
-    if st.button("Submit"):
-        if user_input == card['function']:
-            st.success("Correct!")
-        else:
-            st.error("Incorrect. Try again!")
-
-    # Show hint
-    if st.button("Hint"):
-        st.session_state.show_hint = True
-
-    if st.button("Hide Hint"):
-        st.session_state.show_hint = False
-
-    if st.session_state.show_hint:
-        options = random.sample([c['function'] for c in flashcards], 5)
-        if card['function'] not in options:
-            options[0] = card['function']
-        random.shuffle(options)
-        st.write("Possible answers:")
-        for option in options:
-            st.write(option)
 
     # Navigation buttons
     col1, col2, col3 = st.columns(3)
@@ -77,5 +52,34 @@ if flashcards:
             st.session_state.show_hint = False
 
     st.write(f"Flashcard {st.session_state.index + 1} of {len(flashcards)}")
+
+    # Input for the function name
+    user_input = st.text_input("Enter the function name (e.g., pd.read_csv):")
+
+    if st.button("Submit"):
+        if user_input == card['function']:
+            st.success("Correct!")
+        else:
+            st.error("Incorrect. Try again!")
+
+    # Spacing for hint buttons
+    st.write("")
+    st.write("")
+
+    # Show hint
+    if st.button("Hint"):
+        st.session_state.show_hint = True
+
+    if st.button("Hide Hint"):
+        st.session_state.show_hint = False
+
+    if st.session_state.show_hint:
+        options = random.sample([c['function'] for c in flashcards], 5)
+        if card['function'] not in options:
+            options[0] = card['function']
+        random.shuffle(options)
+        st.write("Possible answers:")
+        for option in options:
+            st.write(option)
 else:
     st.write("No flashcards available. Please check the flashcards.json file.")
