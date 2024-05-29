@@ -48,6 +48,9 @@ if flashcards:
     if st.button("Hint"):
         st.session_state.show_hint = True
 
+    if st.button("Hide Hint"):
+        st.session_state.show_hint = False
+
     if st.session_state.show_hint:
         options = random.sample([c['function'] for c in flashcards], 5)
         if card['function'] not in options:
