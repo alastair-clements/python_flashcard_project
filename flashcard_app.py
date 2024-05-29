@@ -61,7 +61,7 @@ if flashcards:
             if st.session_state.index < 0:
                 st.session_state.index = len(flashcards) - 1
             st.session_state.show_hint = False
-            st.session_state.user_input = ""
+            st.experimental_rerun()
 
     with col3:
         if st.button("Next"):
@@ -69,7 +69,7 @@ if flashcards:
             if st.session_state.index >= len(flashcards):
                 st.session_state.index = 0
             st.session_state.show_hint = False
-            st.session_state.user_input = ""
+            st.experimental_rerun()
 
     # Spacing for hint buttons
     st.write("")
