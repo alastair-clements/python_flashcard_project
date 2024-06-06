@@ -4,6 +4,7 @@ import json
 import random
 import os
 
+
 # Load flashcard data from JSON file
 def load_flashcards():
     try:
